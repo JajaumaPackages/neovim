@@ -1,11 +1,10 @@
-%global commit 4eb5827
+%global commit 1cc869f
 %global vermagic 0.1.4
-%global gitdescribe %{vermagic}-40-g%{commit}
-%global snapshot .git20160416.%{commit}
+%global snapshot .git20160424.%{commit}
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        1%{snapshot}%{?dist}
+Release:        2%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -78,5 +77,8 @@ popd
 
 
 %changelog
+* Sun Apr 24 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.4-2.git20160424.1cc869f
+- Update source to 1cc869f
+
 * Sat Apr 16 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.4-1.git20160416.4eb5827
 - Public release
