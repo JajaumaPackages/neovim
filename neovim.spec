@@ -26,7 +26,6 @@ BuildRequires:  pkgconfig(luajit)
 BuildRequires:  pkgconfig(msgpack)
 BuildRequires:  lua-lpeg
 BuildRequires:  lua-mpack
-BuildRequires:  lua-bitop
 
 %description
 Neovim is a refactor—and sometimes redactor—in the tradition of Vim, which
@@ -79,6 +78,7 @@ popd
 %changelog
 * Fri Apr 29 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-1.git20160429.126e475
 - Update source to 126e475
+- Don't require lua-bitop for build
 
 * Sun Apr 24 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.4-2.git20160424.1cc869f
 - Update source to 1cc869f
