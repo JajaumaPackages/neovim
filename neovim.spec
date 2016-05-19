@@ -1,10 +1,10 @@
-%global commit d02cfe8
+%global commit 9c7038c
 %global vermagic 0.1.5
-%global snapshot .git20160512.%{commit}
+%global snapshot .git20160519.%{commit}
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        2%{snapshot}%{?dist}
+Release:        3%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -76,6 +76,9 @@ popd
 
 
 %changelog
+* Thu May 19 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-3.git20160519.9c7038c
+- Update source to 9c7038c
+
 * Thu May 12 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-2.git20160512.d02cfe8
 - Update source to d02cfe8
 
