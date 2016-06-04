@@ -34,6 +34,7 @@ BuildRequires:  busted
 BuildRequires:  luacheck
 BuildRequires:  lua-nvim-client
 BuildRequires:  hostname
+BuildRequires:  procps-ng
 
 %description
 Neovim is a refactor—and sometimes redactor—in the tradition of Vim, which
