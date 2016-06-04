@@ -4,7 +4,7 @@
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        3%{snapshot}%{?dist}
+Release:        4%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -94,10 +94,13 @@ popd
 
 
 %changelog
-* Sat Jun 04 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-3.git20160604.02e6914
+* Sat Jun 04 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-4.git20160604.02e6914
 - Update source to 02e6914
 - Add patch which forces selected lua program to be used in tests
 - Run all available tests
+
+* Thu May 19 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-3.git20160519.9c7038c
+- Update source to 9c7038c
 
 * Thu May 12 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-2.git20160512.d02cfe8
 - Update source to d02cfe8
