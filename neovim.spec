@@ -8,7 +8,7 @@ Release:        3%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
-URL:            https://neovim.io/
+URL:            https://neovim.io
 
 # git clone https://github.com/neovim/neovim
 # cd neovim
@@ -41,7 +41,8 @@ extension of Vim. Many rewrites, clones, emulators and imitators exist; some
 are very clever, but none are Vim. Neovim strives to be a superset of Vim,
 notwithstanding some intentionally removed misfeatures; excepting those few and
 carefully-considered excisions, Neovim is Vim. It is built for users who want
-the good parts of Vim, without compromise, and more. 
+the good parts of Vim, without compromise, and more.
+
 
 %package        x11
 Summary:        The X11 integration parts of %{name}
