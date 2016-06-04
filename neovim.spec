@@ -1,10 +1,10 @@
-%global commit d02cfe8
+%global commit 02e6914
 %global vermagic 0.1.5
-%global snapshot .git20160512.%{commit}
+%global snapshot .git20160604.%{commit}
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        2%{snapshot}%{?dist}
+Release:        3%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -14,6 +14,9 @@ URL:            https://neovim.io/
 # cd neovim
 # git archive --prefix=neovim/ master | bzip2 >../neovim.tar.bz2
 Source0:        neovim.tar.bz2
+
+# Upstreamable?
+Patch0:         neovim-busted-force-lua-prg.patch
 
 BuildRequires:  cmake >= 2.8.7
 BuildRequires:  gettext
@@ -26,6 +29,10 @@ BuildRequires:  pkgconfig(luajit)
 BuildRequires:  pkgconfig(msgpack)
 BuildRequires:  lua-lpeg
 BuildRequires:  lua-mpack
+# Tests
+BuildRequires:  busted
+BuildRequires:  luacheck
+BuildRequires:  lua-nvim-client
 
 %description
 Neovim is a refactor—and sometimes redactor—in the tradition of Vim, which
@@ -48,6 +55,7 @@ BuildArch:      noarch
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 
 %build
@@ -66,6 +74,15 @@ popd
 %find_lang nvim
 
 
+%check
+pushd buildrpm
+make testlint
+make unittest
+# need to report the failures
+make functionaltest || :
+popd
+
+
 %files -f nvim.lang
 %doc BACKERS.md CONTRIBUTING.md ISSUE_TEMPLATE.md LICENSE README.md
 %{_bindir}/*
@@ -76,6 +93,11 @@ popd
 
 
 %changelog
+* Sat Jun 04 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-3.git20160604.02e6914
+- Update source to 02e6914
+- Add patch which forces selected lua program to be used in tests
+- Run all available tests
+
 * Thu May 12 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-2.git20160512.d02cfe8
 - Update source to d02cfe8
 

@@ -1,0 +1,12 @@
+diff -uNr neovim.orig/cmake/RunTests.cmake neovim/cmake/RunTests.cmake
+--- neovim.orig/cmake/RunTests.cmake	2016-06-04 23:19:08.074893691 +0300
++++ neovim/cmake/RunTests.cmake	2016-06-04 23:19:42.790883605 +0300
+@@ -27,7 +27,7 @@
+ 
+ execute_process(
+   COMMAND ${BUSTED_PRG} ${TEST_TAG} ${TEST_FILTER} -v -o ${BUSTED_OUTPUT_TYPE}
+-    --lazy --helper=${TEST_DIR}/${TEST_TYPE}/preload.lua
++    --lazy --helper=${TEST_DIR}/${TEST_TYPE}/preload.lua --lua=${LUA_PRG}
+     --lpath=${BUILD_DIR}/?.lua ${TEST_PATH}
+   WORKING_DIRECTORY ${WORKING_DIR}
+   ERROR_VARIABLE err
