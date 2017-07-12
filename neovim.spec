@@ -32,6 +32,7 @@ BuildRequires:  luacheck
 BuildRequires:  lua-nvim-client
 BuildRequires:  hostname
 BuildRequires:  procps-ng
+BuildRequires:  gperf
 
 %description
 Neovim is a refactor—and sometimes redactor—in the tradition of Vim, which
@@ -95,6 +96,7 @@ popd
 * Wed Jul 12 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-1.git20170712.837037383
 - Update source to 837037383
 - Drop upstreamed neovim-busted-force-lua-prg.patch
+- Require gperf for building
 
 * Sat Jun 04 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-4.git20160604.02e6914
 - Update source to 02e6914
