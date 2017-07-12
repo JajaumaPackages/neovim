@@ -1,10 +1,10 @@
-%global commit 02e6914
-%global vermagic 0.1.5
-%global snapshot .git20160604.%{commit}
+%global commit 837037383
+%global vermagic 0.2.0
+%global snapshot .git20170712.%{commit}
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        4%{snapshot}%{?dist}
+Release:        1%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -14,9 +14,6 @@ URL:            https://neovim.io
 # cd neovim
 # git archive --prefix=neovim/ master | bzip2 >../neovim.tar.bz2
 Source0:        neovim.tar.bz2
-
-# Upstreamable?
-Patch0:         neovim-busted-force-lua-prg.patch
 
 BuildRequires:  cmake >= 2.8.7
 BuildRequires:  gettext
@@ -58,7 +55,6 @@ BuildArch:      noarch
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
 
 
 %build
@@ -96,6 +92,10 @@ popd
 
 
 %changelog
+* Wed Jul 12 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-1.git20170712.837037383
+- Update source to 837037383
+- Drop upstreamed neovim-busted-force-lua-prg.patch
+
 * Sat Jun 04 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-4.git20160604.02e6914
 - Update source to 02e6914
 - Add patch which forces selected lua program to be used in tests
