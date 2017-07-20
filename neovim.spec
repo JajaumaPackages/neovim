@@ -1,10 +1,10 @@
-%global commit 837037383
+%global commit c40093f47
 %global vermagic 0.2.0
-%global snapshot .git20170712.%{commit}
+%global snapshot .git20170720.%{commit}
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        1%{snapshot}%{?dist}
+Release:        2%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -61,7 +61,7 @@ BuildArch:      noarch
 %build
 mkdir buildrpm
 pushd buildrpm
-%{cmake} -DUSE_BUNDLED:BOOL=OFF ..
+%{cmake} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DUSE_BUNDLED:BOOL=OFF ..
 make %{?_smp_mflags}
 popd
 
@@ -93,6 +93,10 @@ popd
 
 
 %changelog
+* Thu Jul 20 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-2.git20170720.c40093f47
+- Update source to c40093f47
+- Pass -DCMAKE_BUILD_TYPE=RelWithDebInfo to make :CheckHealth happy
+
 * Wed Jul 12 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-1.git20170712.837037383
 - Update source to 837037383
 - Drop upstreamed neovim-busted-force-lua-prg.patch
