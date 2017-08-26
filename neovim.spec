@@ -4,7 +4,7 @@
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        3%{snapshot}%{?dist}
+Release:        4%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -94,7 +94,17 @@ popd
 %{_datadir}/pixmaps/nvim.png
 
 
+%post x11
+update-desktop-database &> /dev/null ||:
+
+%postun x11
+update-desktop-database &> /dev/null ||:
+
+
 %changelog
+* Sun Aug 27 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-4.git20170827.5566f3000
+- Add post/postun scriptlets for neovim-x11
+
 * Sun Aug 27 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-3.git20170827.5566f3000
 - Update to latest git snapshot
 
