@@ -1,10 +1,10 @@
-%global commit 02e6914
-%global vermagic 0.1.5
-%global snapshot .git20160604.%{commit}
+%global commit c40093f47
+%global vermagic 0.2.0
+%global snapshot .git20170720.%{commit}
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        4%{snapshot}%{?dist}
+Release:        2%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -14,9 +14,6 @@ URL:            https://neovim.io
 # cd neovim
 # git archive --prefix=neovim/ master | bzip2 >../neovim.tar.bz2
 Source0:        neovim.tar.bz2
-
-# Upstreamable?
-Patch0:         neovim-busted-force-lua-prg.patch
 
 BuildRequires:  cmake >= 2.8.7
 BuildRequires:  gettext
@@ -35,6 +32,7 @@ BuildRequires:  luacheck
 BuildRequires:  lua-nvim-client
 BuildRequires:  hostname
 BuildRequires:  procps-ng
+BuildRequires:  gperf
 
 %description
 Neovim is a refactor—and sometimes redactor—in the tradition of Vim, which
@@ -58,13 +56,12 @@ BuildArch:      noarch
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
 
 
 %build
 mkdir buildrpm
 pushd buildrpm
-%{cmake} -DUSE_BUNDLED:BOOL=OFF ..
+%{cmake} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DUSE_BUNDLED:BOOL=OFF ..
 make %{?_smp_mflags}
 popd
 
@@ -96,6 +93,15 @@ popd
 
 
 %changelog
+* Thu Jul 20 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-2.git20170720.c40093f47
+- Update source to c40093f47
+- Pass -DCMAKE_BUILD_TYPE=RelWithDebInfo to make :CheckHealth happy
+
+* Wed Jul 12 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-1.git20170712.837037383
+- Update source to 837037383
+- Drop upstreamed neovim-busted-force-lua-prg.patch
+- Require gperf for building
+
 * Sat Jun 04 2016 Jajauma's Packages <jajauma@yandex.ru> - 0.1.5-4.git20160604.02e6914
 - Update source to 02e6914
 - Add patch which forces selected lua program to be used in tests
