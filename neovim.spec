@@ -1,10 +1,10 @@
-%global commit c40093f47
+%global commit 5566f3000
 %global vermagic 0.2.0
-%global snapshot .git20170720.%{commit}
+%global snapshot .git20170827.%{commit}
 
 Name:           neovim
 Version:        %{vermagic}
-Release:        2%{snapshot}%{?dist}
+Release:        3%{snapshot}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -90,9 +90,14 @@ popd
 %{_mandir}/man1/*.1*
 
 %files x11
+%{_datadir}/applications/nvim.desktop
+%{_datadir}/pixmaps/nvim.png
 
 
 %changelog
+* Sun Aug 27 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-3.git20170827.5566f3000
+- Update to latest git snapshot
+
 * Thu Jul 20 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-2.git20170720.c40093f47
 - Update source to c40093f47
 - Pass -DCMAKE_BUILD_TYPE=RelWithDebInfo to make :CheckHealth happy
