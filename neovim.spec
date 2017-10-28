@@ -58,6 +58,9 @@ BuildArch:      noarch
 
 %prep
 %setup -q -n %{name}
+# Fix possible race between updating this spec and running source fetching
+# script in a build system.
+git reset --hard %{gitcommit}
 
 
 %build
