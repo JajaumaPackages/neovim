@@ -17,6 +17,7 @@ URL:            https://neovim.io
 # git archive --prefix=neovim/ master | bzip2 >../neovim.tar.bz2
 Source0:        neovim.tar.bz2
 
+BuildRequires:  git
 BuildRequires:  cmake >= 2.8.7
 BuildRequires:  gettext
 BuildRequires:  pkgconfig(libuv)
@@ -109,6 +110,7 @@ update-desktop-database &> /dev/null ||:
 %changelog
 * Sat Oct 28 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-5.git20171028.1de5b04
 - Update to latest git snapshot
+- Require git for building
 
 * Sun Aug 27 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-4.git20170827.5566f3000
 - Add post/postun scriptlets for neovim-x11
