@@ -9,10 +9,6 @@ Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
 URL:            https://neovim.io
-
-# git clone https://github.com/neovim/neovim
-# cd neovim
-# git archive --prefix=neovim/ master | bzip2 >../neovim.tar.bz2
 Source0:        neovim.tar.bz2
 
 BuildRequires:  git
