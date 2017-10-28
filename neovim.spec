@@ -2,8 +2,6 @@
 %global gitversion 0.2.0
 %global gitcommit 1de5b04
 
-%global snapshot .git20170827.%{commit}
-
 Name:           neovim
 Version:        %{gitversion}
 Release:        5.git%{gitdate}.%{gitcommit}%{?dist}
