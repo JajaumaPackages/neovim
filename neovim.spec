@@ -1,10 +1,12 @@
-%global commit 5566f3000
-%global vermagic 0.2.0
+%global gitdate 20171028
+%global gitversion 0.2.0
+%global gitcommit 1de5b04
+
 %global snapshot .git20170827.%{commit}
 
 Name:           neovim
-Version:        %{vermagic}
-Release:        4%{snapshot}%{?dist}
+Version:        %{gitversion}
+Release:        5.git%{gitdate}.%{gitcommit}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -102,6 +104,9 @@ update-desktop-database &> /dev/null ||:
 
 
 %changelog
+* Sat Oct 28 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-5.git20171028.1de5b04
+- Update to latest git snapshot
+
 * Sun Aug 27 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-4.git20170827.5566f3000
 - Add post/postun scriptlets for neovim-x11
 
