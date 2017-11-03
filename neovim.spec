@@ -1,6 +1,6 @@
-%global gitdate 20171028
+%global gitdate 20171103
 %global gitversion 0.2.0
-%global gitcommit 1de5b04
+%global gitcommit 739bc51
 
 Name:           neovim
 Version:        %{gitversion}
@@ -102,6 +102,9 @@ update-desktop-database &> /dev/null ||:
 
 
 %changelog
+* Fri Nov 03 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-5.git20171103.739bc51
+- Update to latest git snapshot
+
 * Sat Oct 28 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-5.git20171028.1de5b04
 - Update to latest git snapshot
 - Require git for building
