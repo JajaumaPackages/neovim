@@ -1,10 +1,10 @@
-%global gitdate 20171103
-%global gitversion 0.2.0
-%global gitcommit 739bc51
+%global gitdate 20171108
+%global gitversion 0.2.1
+%global gitcommit e98bcf0
 
 Name:           neovim
 Version:        %{gitversion}
-Release:        6.git%{gitdate}.%{gitcommit}%{?dist}
+Release:        1.git%{gitdate}.%{gitcommit}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -102,6 +102,9 @@ update-desktop-database &> /dev/null ||:
 
 
 %changelog
+* Wed Nov 08 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.1-1.git20171108.e98bcf0
+- Update to latest git snapshot
+
 * Fri Nov 03 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.0-6.git20171103.739bc51
 - Update to latest git snapshot
 
