@@ -4,7 +4,7 @@
 
 Name:           neovim
 Version:        %{gitversion}
-Release:        1.git%{gitdate}.%{gitcommit}%{?dist}
+Release:        2.git%{gitdate}.%{gitcommit}%{?dist}
 Summary:        Drop-in replacement for Vim
 
 License:        Apache License, Version 2.0; and Vim license
@@ -15,7 +15,6 @@ BuildRequires:  git
 BuildRequires:  cmake >= 2.8.7
 BuildRequires:  gettext
 BuildRequires:  pkgconfig(libuv)
-BuildRequires:  pkgconfig(jemalloc)
 BuildRequires:  pkgconfig(unibilium)
 BuildRequires:  pkgconfig(termkey)
 BuildRequires:  pkgconfig(vterm)
@@ -102,6 +101,9 @@ update-desktop-database &> /dev/null ||:
 
 
 %changelog
+* Wed Nov 08 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.1-2.git20171108.e98bcf0
+- Don't require jemalloc for building
+
 * Wed Nov 08 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.2.1-1.git20171108.e98bcf0
 - Update to latest git snapshot
 
